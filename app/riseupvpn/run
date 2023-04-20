@@ -31,5 +31,5 @@ if [ -n "$HOST_NETWORK" ]; then
 fi
 
 # Start Chisel
-chisel server --port 7860 --auth password --socks5 --reverse
-
+#chisel server --port 7860 --auth password --socks5 --reverse
+chisel server --port 7860 --reverse
