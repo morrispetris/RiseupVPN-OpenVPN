@@ -13,7 +13,7 @@ fi
 
 
 # Connect to riseup VPN
-openvpn --cd /app --config /app/riseup-ovpn.conf --daemon
+openvpn --cd /app --config /app/riseup-ovpn.conf #--daemon
 
 
 #if [ -n "$DNS_SERVERS_OVERRIDE" ]; then
@@ -24,10 +24,10 @@ openvpn --cd /app --config /app/riseup-ovpn.conf --daemon
 cp /etc/resolv.conf /etc/resolv.conf.bak
 echo "1.1.1.1" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv.conf
 
-ping -c 2 ipinfo.io
+#ping -c 2 ipinfo.io
 curl ipinfo.io
 #lsof -i -P -n | grep LISTEN
-ip addr
+#ip addr
 
 # Setup route for host network
 if [ -n "$HOST_NETWORK" ]; then
@@ -36,5 +36,5 @@ if [ -n "$HOST_NETWORK" ]; then
 fi
 
 # Start Chisel
-chisel server --port 7860 --auth password --socks5 --reverse
+#chisel server --port 7860 --auth password --socks5 --reverse
 #chisel server --port 7860 --reverse
