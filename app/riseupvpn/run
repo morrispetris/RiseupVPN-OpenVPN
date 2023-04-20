@@ -29,4 +29,4 @@ if [ -n "$HOST_NETWORK" ]; then
 fi
 
 # Start Chisel
-chisel server --auth $PASSWORD --socks5 --reverse
+chisel server --port 7860 --auth $PASSWORD --socks5 --reverse
