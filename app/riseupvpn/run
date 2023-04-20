@@ -13,7 +13,7 @@ fi
 
 
 # Connect to riseup VPN
-openvpn --cd /app --config /app/riseup-ovpn.conf #--daemon
+openvpn --cd /app --config /app/riseup-ovpn.conf --daemon
 
 
 if [ -n "$DNS_SERVERS_OVERRIDE" ]; then
