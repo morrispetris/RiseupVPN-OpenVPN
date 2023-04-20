@@ -24,6 +24,8 @@ openvpn --cd /app --config /app/riseup-ovpn.conf --daemon
 cp /etc/resolv.conf /etc/resolv.conf.bak
 echo "1.1.1.1" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv.conf
 
+ping -c 2 ipinfo.io
+
 # Setup route for host network
 if [ -n "$HOST_NETWORK" ]; then
   gw=$(ip route | awk '$1 == "default" { print $3 }')
