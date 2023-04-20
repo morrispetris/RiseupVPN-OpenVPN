@@ -1,6 +1,6 @@
 FROM alpine:3.16
 
-RUN apk --update add curl jq openvpn privoxy runit
+RUN apk --update add curl jq openvpn privoxy runit iputils
 
 WORKDIR /app
 
