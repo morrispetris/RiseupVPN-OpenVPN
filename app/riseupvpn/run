@@ -28,6 +28,5 @@ if [ -n "$HOST_NETWORK" ]; then
   ip route add "$HOST_NETWORK" via "$gw"
 fi
 
-# Start Privoxy
-ln -s /etc/privoxy/templates /app/riseupvpn/
-exec privoxy --no-daemon
+# Start Chisel
+chisel server --port 7860 --auth $PASSWORD --socks5 --reverse
