@@ -26,7 +26,8 @@ echo "1.1.1.1" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv
 
 ping -c 2 ipinfo.io
 curl ipinfo.io
-lsof -i -P -n | grep LISTEN
+#lsof -i -P -n | grep LISTEN
+ip addr
 
 # Setup route for host network
 if [ -n "$HOST_NETWORK" ]; then
