@@ -16,14 +16,13 @@ fi
 openvpn --cd /app --config /app/riseup-ovpn.conf --daemon
 
 
-if [ -n "$DNS_SERVERS_OVERRIDE" ]; then
-  cp /etc/resolv.conf /etc/resolv.conf.bak
-  echo "$DNS_SERVERS_OVERRIDE" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv.conf
-else
-  cp /etc/resolv.conf /etc/resolv.conf.bak
-  echo "1.1.1.1" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv.conf
-fi
-
+#if [ -n "$DNS_SERVERS_OVERRIDE" ]; then
+#  cp /etc/resolv.conf /etc/resolv.conf.bak
+#  echo "$DNS_SERVERS_OVERRIDE" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv.conf
+#fi
+  
+cp /etc/resolv.conf /etc/resolv.conf.bak
+echo "1.1.1.1" | sed -e 's/^/nameserver /' -e 's/,/\nnameserver /' > /etc/resolv.conf
 
 # Setup route for host network
 if [ -n "$HOST_NETWORK" ]; then
